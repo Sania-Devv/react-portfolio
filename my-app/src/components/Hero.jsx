@@ -37,6 +37,7 @@ export default function Hero() {
 
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-[-100px] top-1/4 h-[500px] w-[500px] rounded-full bg-[#34E5A0]/10 blur-[120px]" />
+        <div className="absolute left-[-120px] bottom-[-80px] h-[380px] w-[380px] rounded-full bg-[#34E5A0]/[0.04] blur-[130px]" />
 
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px]" />
       </div>
@@ -51,29 +52,32 @@ export default function Hero() {
         <div className="relative z-20">
 
           {/* Status */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-md">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#34E5A0] shadow-[0_0_10px_#34E5A0]" />
+          <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-1.5 backdrop-blur-md">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#34E5A0]/50" />
+              <span className="relative h-1.5 w-1.5 rounded-full bg-[#34E5A0] shadow-[0_0_10px_#34E5A0]" />
+            </span>
 
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/65">
+            <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/60">
               Open to opportunities
             </span>
           </div>
 
           {/* Heading */}
-      <h1 className="font-extrabold leading-[0.95] tracking-tight">
+          <h1 className="font-extrabold leading-[0.95] tracking-tight">
 
-  <span className="mb-2 block text-4xl text-white sm:text-6xl md:text-6xl lg:text-7xl">
-    Sania
-  </span>
+            <span className="mb-3 block text-4xl text-white sm:text-6xl md:text-6xl lg:text-7xl">
+              Sania
+            </span>
 
-  <span className="inline-block whitespace-nowrap rounded-full bg-[#34E5A0] px-3 py-1.5 text-lg font-extrabold text-[#06110C] sm:text-3xl md:text-2xl lg:text-5xl">
-    Frontend Developer
-  </span>
+            <span className="inline-block whitespace-nowrap rounded-full bg-gradient-to-r from-[#34E5A0] to-[#5FF0B5] px-4 py-1.5 text-lg font-extrabold text-[#06110C] shadow-[0_8px_30px_rgba(52,229,160,0.25)] sm:text-3xl md:text-2xl lg:text-5xl">
+              Frontend Developer
+            </span>
 
-</h1>
+          </h1>
 
           {/* Short Description */}
-          <p className="mt-5 max-w-md text-sm leading-6 text-white/45 md:text-[14px]">
+          <p className="mt-6 max-w-md text-sm leading-[1.7] text-white/45 md:text-[14px]">
             I build clean, modern interfaces with{" "}
             <span className="font-medium text-white/75">
               React, Next.js
@@ -85,22 +89,23 @@ export default function Hero() {
           </p>
 
           {/* Typing Line */}
-          <div className="mt-5 flex h-8 items-center">
+          <div className="mt-6 flex h-8 items-center gap-2">
+            <span className="h-px w-6 bg-[#34E5A0]/50" />
             <span className="text-xl font-bold text-[#34E5A0] sm:text-2xl md:text-2xl">
               {displayText}
             </span>
 
-            <span className="ml-1 animate-pulse text-[#34E5A0]">
+            <span className="ml-0.5 animate-pulse text-[#34E5A0]">
               |
             </span>
           </div>
 
           {/* Buttons */}
-          <div className="mt-7 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3.5">
 
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-full bg-[#34E5A0] px-5 py-2.5 text-sm font-semibold text-[#06110C] shadow-[0_4px_24px_rgba(52,229,160,0.35)] transition-colors hover:bg-[#4FF0B0]"
+              className="inline-flex items-center gap-2 rounded-full bg-[#34E5A0] px-5 py-2.5 text-sm font-semibold text-[#06110C] shadow-[0_8px_28px_rgba(52,229,160,0.3)] transition-all duration-300 hover:bg-[#4FF0B0] hover:shadow-[0_10px_34px_rgba(52,229,160,0.45)] hover:-translate-y-0.5"
             >
               <ArrowUpRight size={16} />
               View Work
@@ -109,7 +114,7 @@ export default function Hero() {
             <a
               href="/resume.pdf"
               download
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/[0.09] hover:border-white/20 hover:-translate-y-0.5"
             >
               <FileDown size={16} />
               Resume
@@ -243,8 +248,6 @@ export default function Hero() {
 
               {/* ================================================= */}
               {/* TECH CARD */}
-              {/* Mobile/tablet: chhota, kam offset, kam rotation — collide nahi karega */}
-              {/* md aur upar: EXACT wahi values jo pehle "sahi" thi */}
               {/* ================================================= */}
 
               <div
@@ -271,7 +274,7 @@ export default function Hero() {
                   md:p-5
                   rounded-2xl
                   border
-                  border-white/10
+                  border-white/[0.09]
                   bg-[#101512]/95
                   shadow-[0_25px_60px_rgba(0,0,0,0.6)]
                   backdrop-blur-xl
@@ -279,6 +282,7 @@ export default function Hero() {
                   duration-500
                   hover:-translate-y-2
                   hover:rotate-0
+                  hover:border-[#34E5A0]/25
                 "
               >
                 <div className="mb-2.5 flex items-center justify-between sm:mb-3 md:mb-4">
@@ -335,8 +339,6 @@ export default function Hero() {
 
               {/* ================================================= */}
               {/* LEARNING CARD */}
-              {/* Mobile/tablet: chhota, kam offset, kam rotation */}
-              {/* md aur upar: EXACT wahi values jo pehle "sahi" thi */}
               {/* ================================================= */}
 
               <div
@@ -363,7 +365,7 @@ export default function Hero() {
                   md:p-5
                   rounded-2xl
                   border
-                  border-white/10
+                  border-white/[0.09]
                   bg-[#101512]/95
                   shadow-[0_25px_60px_rgba(0,0,0,0.6)]
                   backdrop-blur-xl
@@ -371,6 +373,7 @@ export default function Hero() {
                   duration-500
                   hover:-translate-y-2
                   hover:rotate-0
+                  hover:border-[#34E5A0]/25
                 "
               >
                 <div className="mb-2 flex items-center gap-1.5 sm:mb-3 md:gap-2">
@@ -412,7 +415,7 @@ export default function Hero() {
                   gap-1.5
                   rounded-full
                   border
-                  border-white/10
+                  border-white/[0.09]
                   bg-[#101512]/95
                   px-2.5
                   py-1.5
@@ -425,7 +428,10 @@ export default function Hero() {
                   md:py-2
                 "
               >
-                <span className="h-1 w-1 animate-pulse rounded-full bg-[#34E5A0] sm:h-1.5 sm:w-1.5" />
+                <span className="relative flex h-1 w-1 sm:h-1.5 sm:w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#34E5A0]/50" />
+                  <span className="relative h-1 w-1 rounded-full bg-[#34E5A0] sm:h-1.5 sm:w-1.5" />
+                </span>
 
                 <span className="text-[9px] text-white/70 sm:text-[10px] md:text-[11px]">
                   Available for work

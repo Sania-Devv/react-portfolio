@@ -25,14 +25,14 @@ export default function About() {
 
   return (
     <section
-  ref={sectionRef}
-  id="about"
-  className="relative overflow-hidden bg-[#0A0F0D] pb-16 pt-8 md:pb-20 md:pt-10"
->
+      ref={sectionRef}
+      id="about"
+      className="relative overflow-hidden bg-[#0A0F0D] pb-16 pt-8 md:pb-20 md:pt-10"
+    >
       {/* ================= BACKGROUND ================= */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-180px] top-10 h-[400px] w-[400px] rounded-full bg-[#34E5A0]/5 blur-[120px]" />
-        <div className="absolute bottom-[-100px] right-[-150px] h-[400px] w-[400px] rounded-full bg-[#7C3AED]/5 blur-[120px]" />
+        <div className="absolute bottom-[-100px] right-[-150px] h-[400px] w-[400px] rounded-full bg-[#7C3AED]/[0.06] blur-[120px]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:48px_48px]" />
       </div>
 
@@ -40,10 +40,10 @@ export default function About() {
 
         {/* ================= ABOUT LABEL ================= */}
         <div
-  className={`mb-5 md:mb-8 flex items-center gap-5 transition-all duration-700 ease-out ${
-    isVisible ? "translate-y-0 opacity-100" : "-translate-y-5 opacity-0"
-  }`}
->
+          className={`mb-5 md:mb-8 flex items-center gap-5 transition-all duration-700 ease-out ${
+            isVisible ? "translate-y-0 opacity-100" : "-translate-y-5 opacity-0"
+          }`}
+        >
           <div className="flex items-center gap-3">
             <span className="relative flex h-3 w-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#34E5A0]/40" />
@@ -68,9 +68,12 @@ export default function About() {
               isVisible ? "translate-x-0 opacity-100" : "opacity-0 lg:-translate-x-20"
             }`}
           >
-            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/30">
-              A little about me
-            </p>
+            <div className="mb-3 flex items-center gap-2">
+              <span className="h-px w-5 bg-[#34E5A0]/60" />
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/35">
+                A little about me
+              </p>
+            </div>
 
             <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl">
               <span className="text-white">Designing with</span>
@@ -80,7 +83,7 @@ export default function About() {
               </span>
             </h2>
 
-            <div className="mt-6 max-w-sm space-y-4 text-sm leading-6 text-white/50">
+            <div className="mt-6 max-w-sm space-y-4 text-sm leading-[1.7] text-white/50">
               <p>
                 I'm a frontend developer who enjoys turning ideas into
                 clean, modern and interactive digital experiences.
@@ -96,10 +99,10 @@ export default function About() {
 
             <a
               href="#projects"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#34E5A0] transition-all duration-300 hover:gap-3"
+              className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#34E5A0] transition-all duration-300"
             >
               Explore my work
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </div>
 
@@ -149,19 +152,19 @@ export default function About() {
                 </span>
               </h3>
 
-              <p className="mt-4 text-sm leading-6 text-white/45">
+              <p className="mt-4 text-sm leading-[1.7] text-white/45">
                 Good interfaces aren't only about how they look.
                 They should feel intuitive, responsive and enjoyable to use.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[10px] uppercase tracking-wider text-white/50 backdrop-blur-md">
+              <div className="mt-6 flex flex-wrap gap-2.5">
+                <span className="rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[10px] uppercase tracking-wider text-white/50 backdrop-blur-md transition-colors duration-300 hover:border-[#34E5A0]/30 hover:text-white/80">
                   Clean UI
                 </span>
-                <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[10px] uppercase tracking-wider text-white/50 backdrop-blur-md">
+                <span className="rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[10px] uppercase tracking-wider text-white/50 backdrop-blur-md transition-colors duration-300 hover:border-[#34E5A0]/30 hover:text-white/80">
                   Responsive
                 </span>
-                <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[10px] uppercase tracking-wider text-white/50 backdrop-blur-md">
+                <span className="rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-[10px] uppercase tracking-wider text-white/50 backdrop-blur-md transition-colors duration-300 hover:border-[#34E5A0]/30 hover:text-white/80">
                   Interactive
                 </span>
               </div>
@@ -170,13 +173,15 @@ export default function About() {
 
           {/* ================= BOTTOM STATEMENT ================= */}
           <div
-            className={`z-20 text-center transition-all delay-500 duration-700 lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 ${
+            className={`z-20 flex items-center justify-center gap-4 text-center transition-all delay-500 duration-700 lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >
+            <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#34E5A0]/40" />
             <p className="bg-gradient-to-r from-[#34E5A0] to-[#6EE7F9] bg-clip-text text-[10px] uppercase tracking-[0.3em] text-transparent">
               React · Next.js · Tailwind · PHP
             </p>
+            <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#6EE7F9]/40" />
           </div>
 
         </div>
